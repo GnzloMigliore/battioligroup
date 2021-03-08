@@ -4,47 +4,10 @@
 
 <!-- head -->
 
-<head>
-	<meta charset="utf-8" />
-	<title>Battioli</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Excelsure - Courier Service HTML Template" />
-	<meta name="keywords" content="Excelsure">
-	<meta name="author" content="Capricorn_Theme" />
-	<meta name="MobileOptimized" content="320" />
-
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/icon" href="/images/favicon.ico">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
-	<!-- Navigation CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/menumaker.css" />
-	<!-- Animated CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/animate.css" />
-	<!-- Owl Carousel css -->
-	<link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css" />
-	<!-- Line Awesome CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/line-awesome.min.css" />
-	<!-- Flaticon CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/flaticon.css" />
-	<!-- Slicknav CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/slicknav.min.css" />
-	<!-- Main Style CSS -->
-	<link href="/css/style.css" rel="stylesheet" type="text/css" />
-	<!-- Responsive CSS -->
-	<link href="/css/responsive.css" rel="stylesheet">
-	
-
-
-</head>
+<%- include('partials/head.ejs') %>
 <!-- end head -->
 
 <!-- body start-->
-
 <body>
 	<!-- preloader -->
 	<div class="preloader">
@@ -54,81 +17,7 @@
 		</div>
 	</div>
 	<!-- end preloader -->
-
-	<!-- top bar start-->
-	<div id="top-bar" class="top-bar-main-block">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="top-nav">
-						<ul>
-							<li class="login"><a href="/login" title="Login"><i class="las la-share-square"></i> Iniciar sesión </a></li>
-							<li><a href="/createuser" title="Create an account"><i class="las la-user"></i> Create una cuenta</a></li>
-						
-						</ul>
-					</div>
-				</div>
-				<div class="col-md-6 text-right">
-					<div class="top-bar-social">
-						<ul>
-							<li class="call"><i class="las la-phone-volume"></i>Llamanos: <a href="tel:" title="">+1 (305) 775 - 9044</a></li>
-							<li><a href="https://facebook.com/" target="_blank" title="facebook"><i class="lab la-facebook-f"></i></a></li>
-							<li><a href="https://twitter.com/" target="_blank" title="twitter"><i class="lab la-twitter"></i></a></li>
-							<li><a href="https://plus.google.com/" target="_blank" title="google-plus"><i class="lab la-linkedin-in"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- top bar end-->
-	<!-- top-nav bar start-->
-	<div id="nav-bar" class="nav-bar-main-block">
-		<div class="sticky-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-12">
-						<!--logo-->
-						<div class="logo">
-							<a href="/" title="logo"><img src="/images/logobattioli.png" alt="logo"></a>
-						</div>
-						<!-- Responsive Menu Area -->
-						<div class="responsive-menu-wrap"></div>
-					</div>
-
-					<div class="col-lg-7">
-						<!-- main-menu-->
-						<div class="navigation text-white">
-							<div id="cssmenu">
-								<ul>
-								
-									<li class="active"><a href="/" title="Home">Home</a>
-								
-									<li><a href="/nosotros" title="Pages">Nosotros</a>
-									
-									</li>
-									<li><a href="/servicios" title="services">Servicios</a>
-										
-									</li>
-								
-								
-									<li><a href="/contacto" title="contact">Contact</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2">
-						<div class="navigation-btn">
-						
-							<a href="/login" class="btn btn-primary" title="get quotes">INICIAR SESIÓN</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- top-nav bar end-->
+	<%- include('partials/navbar.ejs') %>
 	<!-- home slider start-->
 	<div id="home-slider" class="home-main-block owl-carousel">
 		<div class="item home-slider-bg" style="background-image: url('images/slider/portada1.jpg')">

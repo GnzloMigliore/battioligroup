@@ -2,42 +2,7 @@
 
 <html lang="en">
 <!-- head -->
-
-<head>
-	<meta charset="utf-8" />
-	<title>Excelsure | Courier &amp; Delivery Service HTML Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Excelsure - Courier Service HTML Template" />
-	<meta name="keywords" content="Excelsure">
-	<meta name="author" content="Capricorn_Theme" />
-	<meta name="MobileOptimized" content="320" />
-
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/icon" href="/images/icons/favicon.png">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" />
-	<!-- Navigation CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/menumaker.css" />
-	<!-- Animated CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/animate.css" />
-	<!-- Owl Carousel css -->
-	<link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css" />
-	<!-- Line Awesome CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/line-awesome.min.css" />
-	<!-- Flaticon CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/flaticon.css" />
-	<!-- Slicknav CSS -->
-	<link rel="stylesheet" type="text/css" href="/css/slicknav.min.css" />
-	<!-- Main Style CSS -->
-	<link href="/css/style.css" rel="stylesheet" type="text/css" />
-	<!-- Responsive CSS -->
-	<link href="/css/responsive.css" rel="stylesheet">
-
-</head>
+<%- include('partials/head.ejs') %>
 <!-- end head -->
 <!-- body start-->
 
@@ -50,50 +15,7 @@
 		</div>
 	</div>
 	<!-- end preloader -->
-
-	<!-- top-nav bar start-->
-	<div id="nav-bar" class="nav-bar-main-block absolute">
-		<div class="sticky-area">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-md-12">
-						<div class="logo">
-							<a href="/" title="logo"><img src="/images/logobattioli.png" alt="logo"></a>
-						</div>
-						<!-- Responsive Menu Area -->
-						<div class="responsive-menu-wrap"></div>
-					</div>
-					<div class="col-lg-7">
-						<div class="navigation text-white theme-2">
-							<div id="cssmenu">
-								<ul>
-									<li class="active"><a href="/" title="Home">Home</a>
-									<li><a href="about.html" title="Nostors">Nosotros</a>
-									
-									</li>
-									<li><a href="/servicios" title="servicios">Servicios</a>
-									
-									</li>
-								
-									
-									<li><a href="/contacto" title="contact">Contacto</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-2">
-						<div class="navigation-btn">
-							
-							<a href="/login" class="btn btn-primary" title="get quotes">INICIAR SESIÓN</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- top-nav bar end-->
-
+	<%- include('partials/navbar.ejs') %>
 	<!-- Breadcroumb Area -->
 
 	<div class="breadcroumb-area bread-bg">

@@ -2,42 +2,7 @@
 
 <html lang="en">
 <!-- head -->
-
-<head>
-	<meta charset="utf-8" />
-	<title>Excelsure | Courier &amp; Delivery Service HTML Template</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Excelsure - Courier Service HTML Template" />
-	<meta name="keywords" content="Excelsure">
-	<meta name="author" content="Capricorn_Theme" />
-	<meta name="MobileOptimized" content="320" />
-
-	<!-- google fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/icon" href="images/icons/favicon.png">
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
-	<!-- Navigation CSS -->
-	<link rel="stylesheet" type="text/css" href="css/menumaker.css" />
-	<!-- Animated CSS -->
-	<link rel="stylesheet" type="text/css" href="css/animate.css" />
-	<!-- Owl Carousel css -->
-	<link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css" />
-	<!-- Line Awesome CSS -->
-	<link rel="stylesheet" type="text/css" href="css/line-awesome.min.css" />
-	<!-- Flaticon CSS -->
-	<link rel="stylesheet" type="text/css" href="css/flaticon.css" />
-	<!-- Slicknav CSS -->
-	<link rel="stylesheet" type="text/css" href="css/slicknav.min.css" />
-	<!-- Main Style CSS -->
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-	<!-- Responsive CSS -->
-	<link href="css/responsive.css" rel="stylesheet">
-
-</head>
+<%- include('partials/head.ejs') %>
 <!-- end head -->
 <!-- body start-->
 
@@ -128,7 +93,7 @@
                             <input type="text" name="first_name" id="Nombre" required="" placeholder="Nombre">
                             <input type="text" name="last_name" id="Apellido" required="" placeholder="Apellido">
 							<input type="email" name="email" id="email" required="" placeholder="Email">
-							<input type="password" name="password" id="password" required="" placeholder="Contraseña">
+							<input type="password" name="contraseña" id="password" required="" placeholder="Contraseña">
                             <input type="password" name="confirm_password" id="password" required="" placeholder="Repetir contraseña">
                             <input type="telephone" name="telephone" id="telephone" required="" placeholder="Teléfono">
 							<select name="gender" id="gender">
