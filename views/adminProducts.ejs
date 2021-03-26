@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- head -->
+<%- include('partials/head.ejs') %>
+<!-- end head -->
+<!-- body start-->
+
+<body>
+
+     <!-- top bar start-->
+	 <div id="top-bar" class="top-bar-main-block">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					
+				  
+				</div>
+				<div class="col-md-6 text-right">
+					<div class="top-bar-social">
+						<ul>
+							<li class="call"><i class="las la-phone-volume"></i>Llamanos: <a href="tel:" title="">+1 (305) 775 - 9044</a></li>
+							
+							<li><a href="https://www.instagram.com/battioligroup/?hl=es-la" target="_blank" title="google-plus"><ion-icon name="logo-instagram"></ion-icon></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- top bar end-->
+	<!-- top-nav bar start-->
+	<div id="nav-bar" class="nav-bar-main-block">
+		<div class="sticky-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<!--logo-->
+						<div class="logo">
+							<a href="/" title="logo"><img src="/images/logobattioli.png" alt="logo"></a>
+						</div>
+						<!-- Responsive Menu Area -->
+						<div class="responsive-menu-wrap"></div>
+					</div>
+	
+					<div class="col-lg-7">
+						<!-- main-menu-->
+						<div class="navigation text-white">
+							<div id="cssmenu">
+								<ul>
+								
+									<li class="active"><a href="/" title="Home">Home</a>
+								
+									<li><a href="/nosotros" title="Pages">Nosotros</a>
+									
+									</li>
+									<li><a href="/servicios" title="services">Servicios</a>
+										
+									</li>
+								
+								
+									<li><a href="/contacto" title="contact">Contact</a>
+									</li>
+									<li><a href="/adminuser" title="contact">Administrar</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2">
+						<div class="dropdown mt-3">
+                          
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+									<%= locals.usuario.first_name + " " + locals.usuario.last_name%> 
+                                </button>
+                                
+                           
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                              <li><a class="dropdown-item" href="#">Perfil</a></li>
+                              <li><a class="dropdown-item" href="/logout">Cerrar sesión</a></li>
+                              
+                            </ul>
+                          </div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="breadcroumb-area bread-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcroumb-title text-center">
+						
+						<h1><%= user.first_name + " " +  user.last_name %></h1>
+				
+						<h6><a href="index.html">Home</a> /Administar</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<article class="col-12">
+		<article class="my-3">
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Agregar producto</button>
+
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				  </div>
+				  <div class="modal-body">
+					
+					<form action="/product/create/<%= user.id%>" method="POST">
+					
+					  <div class="mb-3">
+						<input name="name_product" type="text" class="form-control" id="recipient-name" placeholder="Nombre del producto">
+					  </div>
+					  <select name="tipo_envio" id="tipo_envio" class="mb-3">
+						<option value="" selected disabled>Seleccioná un tipo de envío</option>
+							<option value="Marítimo">Marítimo</option>
+							<option value="Aéreo">Aéreo</option>
+						</select>
+					  <div class="mb-3">
+						<input name="place" type="text" class="form-control" id="recipient-name"placeholder="Estado del envío">
+					  </div>
+					  <div class="mb-3">
+					<input name="weight" type="number" class="form-control" id="wiight"placeholder="Peso">
+					  </div>
+					  <div class="mb-3">
+						<input name="n_tracking" type="text" class="form-control" id="n_tracking"placeholder="Número de tracking">
+					  </div>
+					  <div class="mb-3">
+						<textarea name="coments" type="text" class="form-control" id="coments"placeholder="Comentario"></textarea>
+					  </div>
+					  <div class="mb-3">
+						<label for="message-text" class="col-form-label">Fecha:</label>
+						<input type="date" id="start" name="date_state" class="form-control  bg-light"
+						value=""
+						min="1940-01-01" max="2021-12-31">
+					  </div>
+					
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					<button type="submit" class="btn btn-primary">Agregar</button>
+				</form>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			</a>
+		</article>
+		<% if (product.length == 0) {%>
+			<h4 class="w-100 text-center my-5">EL USUARIO NO COMPRO NINGUN PRODUCTO</h4>
+		<%}else{%>
+			<table class="table">
+				<thead>
+					<tr>
+						
+						<th scope="col">Nombre del producto</th>
+						<th scope="col">Tipo de envío</th>
+						<th scope="col">Estado del envío</th>
+						<th scope="col">Peso</th>
+						<th scope="col">N° Tracking</th>
+						<th scope="col">Fecha</th>
+						<th scope="col">Comentario</th>
+						<th scope="col">Editar</th>
+										   
+					</tr>
+				</thead>
+				<tbody>
+					<% product.forEach(product=> { %>
+						<tr>
+							<td><%= product.name_product %></td>
+							<td><%= product.tipo_envio %></td>
+						    <td><%= product.place %></td>
+							<td><%= product.weight %></td>
+							<td><%= product.n_tracking %></td>
+					     	<td><%= product.date_state %></td>
+							 <td><%= product.coments %></td>
+							<td><a href="/products/edit/<%= product.id%>"><ion-icon style="color: black;" name="pencil-outline"></ion-icon></ion-icon></a></td>
+						   
+						</tr>
+						<% }); %> 
+				</tbody>
+			</table>
+		<% } %>
+		<a href="/adminuser" class=" btn btn-primary border mb-3">Volver</a>
+	</article>
+	
+
+
+
+
+	<!-- Jquery Library -->
+	<script src="js/jquery-2.min.js"></script>
+	<!-- Bootstrap Js -->
+	<script src="js/bootstrap.bundle.js"></script>
+	<!-- Owl Carousel js -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Smooth Scroll Js -->
+	<script src="js/smooth-scroll.js"></script>
+	<!-- Navigation JS -->
+	<script src="js/menumaker.js"></script>
+	<!-- Way Points JS -->
+	<script src="js/waypoints.min.js"></script>
+	<!-- Counter Up JS -->
+	<script src="js/jquery.counterup.js"></script>
+	<!-- Sticky JS -->
+	<script src="js/jquery.sticky.js"></script>
+	<!-- Slicknav JS -->
+	<script src="js/jquery.slicknav.min.js"></script>
+	<!-- Mail Chimp JS -->
+	<script src="vendor/mailchimp/jquery.ajaxchimp.js"></script>
+	<!-- Main JS -->
+	<script src="js/theme.js"></script>
+	<!-- end JS -->
+	<!-- Ionicons -->
+	<script  src = "https://unpkg.com/ionicons@5.1.2/dist/ionicons.js" ></script>
+</body>
+<!-- body end -->
+
+</html>

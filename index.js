@@ -37,12 +37,15 @@ app.use(user);
 
 const webRouter = require('./routes/web');
 const userRouter = require('./routes/users');
-
+const adminUserRouter = require('./routes/adminUser');
+const adminProductsRouter = require('./routes/adminProducts');
+const adminProducts = require('./routes/products');
 
 app.use(webRouter);
 app.use(userRouter);
-
-
+app.use(adminUserRouter);
+app.use(adminProductsRouter);
+app.use(adminProducts);
 
 
 app.listen(3000,'localhost',() =>  console.log('servidor corriendo en el puerto 3000'));

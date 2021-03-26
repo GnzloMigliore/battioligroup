@@ -9,24 +9,27 @@ module.exports = (sequelize, dataTypes) => {
         },
         first_name: dataTypes.STRING,
         last_name: dataTypes.STRING,
+        full_name: dataTypes.STRING,
         email: dataTypes.STRING,
         password: dataTypes.STRING,
         telephone: dataTypes.INTEGER,
+        adress: dataTypes.STRING,
+        dni: dataTypes.STRING,
         gender: dataTypes.STRING,
+        roles: dataTypes.INTEGER,
+        product_id: dataTypes.INTEGER,
         
     };
 
     const users = sequelize.define(alias, cols)
-    //Relaciones entre Users y Address
-    /*users.associate = function(models) {
-       users.belongsToMany(
-            models.patients,
+    users.associate = function(models) {
+        users.belongsTo(
+            models.products,
             {
-                as: 'patients',
-                through: 'patients',
-                foreignKey: 'patients_id'
+                as: 'products',
+                foreignKey: 'product_id'
             }
-        )
-   }*/
+        )  
+    } 
     return users;
 } 
