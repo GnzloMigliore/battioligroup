@@ -4,7 +4,7 @@
   "description": "Battioli Group",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon src/index.js"
+    "test": "nodemon index.js"
   },
   "repository": {
     "type": "git",
