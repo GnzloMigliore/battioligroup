@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 const user = require ('/middlewares/user');
-
+app.use(user);
 // view engine setup
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
@@ -28,7 +28,7 @@ app.use(session({
 //Aqui coloco el Middleware para activar lo referido a las cookies
 app.use(cookieParser());
 // Requiero el middleware para recordar el usuario en la vista
-app.use(user);
+
 
 
 
