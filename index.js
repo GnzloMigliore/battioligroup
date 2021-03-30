@@ -5,8 +5,7 @@ const cookieParser = require('cookie-parser');
 //const logger = require('morgan');
 const session = require('express-session');
 
-const user = require ('./middlewares/user');
-app.use(user);
+
 // view engine setup
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
