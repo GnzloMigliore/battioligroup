@@ -15,9 +15,9 @@ module.exports = {
         res.render(path.resolve(__dirname, '..','views', 'login'));
       },
       create : async  (req,res) => {
-        const usuarios = await users.findAll()
+     
    
-        res.render(path.resolve(__dirname, '..','views', 'registro'),{usuarios});
+        res.render(path.resolve(__dirname, '..','views', 'registro'));
       },
       registro :async (req,res) => {
          let errors = validationResult(req);
