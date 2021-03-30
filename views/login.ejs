@@ -89,7 +89,7 @@
 				<div class="col-lg-12">
 					<div class="contact-form">
 						
-						<form name="contact-form" id="contactForm" action="/session" method="POST" class="mb-5" >
+						<form name="contact-form" id="contactForm" action="/session" method="POST">
 							<input type="email" name="email" id="email" ="" placeholder="Email">
 								<% if(typeof errors != 'undefined' && errors.email){%>
 									<span style="background-color: cornsilk;" class="text-danger mb-1" > <%=errors.email.msg %></span>
@@ -101,7 +101,7 @@
 							<button type="submit" class="btn btn-primary mt-3">INICIAR SESIÓN</button>
 							
 						</form>
-						<a class="btn btn-secondary mt-3" href="/forgetpassword">Olvidé mi contraseña</a> 
+						<a class="btn btn-secondary mt-3 mb-3" href="/forgetpassword">Olvidé mi contraseña</a> 
 					</div>
 				</div>
 			</div>
