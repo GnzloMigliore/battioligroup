@@ -16,8 +16,6 @@ router.post('/registro',[validacionRegistro], controllersUsers.registro);
 router.get('/login', controllersUsers.index);
 router.post('/session',[validacionAcceso], controllersUsers.login);
 router.get('/logout',[validacionAcceso], controllersUsers.logout);
-
-
 router.get('/forgetpassword', controllersUsers.forget);
 
 module.exports = router;
