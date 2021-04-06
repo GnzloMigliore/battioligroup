@@ -41,7 +41,7 @@ router.post('/sendmail', async (req,res)=>{
   });
   await transporter.sendMail({
     from: "no-reply@battioligroup.com",
-    to:"gonzalomigliore@gmail.com",
+    to:"battioligroup@gmail.com",
     subject: "Nueva consulta",
     text: "Nombre: "+name
     +"                   Email: "+email
