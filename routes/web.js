@@ -41,7 +41,7 @@ router.post('/sendmail', async (req,res)=>{
   });
   await transporter.sendMail({
     from: "no-reply@battioligroup.com",
-    to:"battioligroup@gmail.com",
+    to:"gonzalomigliore@gmail.com",
     subject: "Nueva consulta",
     text: "Nombre: "+name
     +"                   Email: "+email
@@ -49,11 +49,11 @@ router.post('/sendmail', async (req,res)=>{
     +"             Consulta: "+mensaje
     
   })
-  res.redirect('/');
+  res.redirect('/mensajeEnviado');
     }
 
   
   );
     
-
+router.get('/mensajeEnviado', controllersWeb.mensajeEnviado);
 module.exports = router;

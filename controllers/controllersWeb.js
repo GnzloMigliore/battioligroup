@@ -24,4 +24,9 @@ module.exports = {
    
     res.render(path.resolve(__dirname, '..','views', 'contacto'));
   },
+  mensajeEnviado: async  (req,res) => {
+
+   
+    res.render(path.resolve(__dirname, '..','views', 'mensajeEnviado'));
+  },
 }
