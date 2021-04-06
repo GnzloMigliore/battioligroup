@@ -71,11 +71,11 @@
 				<div class="col-lg-6">
 					<div class="contact-form">
 						<h3>Ponete en contacto</h3>
-						<form name="contact-form" id="contactForm" action="sendmail" method="POST">
+						<form name="contact-form" id="contactForm" action="/sendmail" method="POST">
 							<input type="text" name="name" id="name" required="" placeholder="Nombre y apellido">
 							<input type="email" name="email" id="email" required="" placeholder="E-mail">
-						
-							<textarea name="message" id="message" cols="30" rows="10" required="" placeholder="¿En que te podemos ayudar?"></textarea>
+							<input type="phone" name="phone" id="phone" required="" placeholder="Teléfono">
+							<textarea name="mensaje" id="mensaje" cols="30" rows="10" required="" placeholder="¿En que te podemos ayudar?"></textarea>
 							<button class="btn btn-primary" type="submit" name="submit">Enviar mensaje</button>
 						</form>
 					</div>

@@ -505,24 +505,24 @@
 				<h1 class="section-heading">Hacé tu consulta!</h1>
 			</div>
 			<div class="quotation-block">
-				<form class="quotation-form" method="post">
+				<form class="quotation-form" action="/sendmail" method="POST">
 					<div class="row">
 						<div class="col-lg-4 col-sm-6">
 							<div class="form-group">
 								<label for="name">Nombre</label>
-								<input type="text" class="form-control" id="name" placeholder="Nombre completo" required>
+								<input type="text" class="form-control" id="name" placeholder="Nombre completo" name="name" required>
 							</div>
 						</div>
 						<div class="col-lg-4 col-sm-6">
 							<div class="form-group">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Email" required>
+								<input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
 							</div>
 						</div>
 						<div class="col-lg-4">
 							<div class="form-group">
 								<label for="phone">Teléfono</label>
-								<input type="text" class="form-control" id="phone" placeholder="Número de tel." required>
+								<input type="text" class="form-control" id="phone" placeholder="Número de tel."  name="phone" required>
 							</div>
 						</div>
 					</div>
@@ -530,7 +530,7 @@
 						<div class="col-lg-8">
 							<div class="form-group">
 								<label for="phone">Consulta</label>
-								<input type="text" class="form-control" id="phone" placeholder="Consulta" required>
+								<input type="text" class="form-control" id="phone" placeholder="Consulta" name="mensaje" required>
 							</div>
 						</div>
 						<div class="col-lg-4">
