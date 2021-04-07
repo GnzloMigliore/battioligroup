@@ -74,7 +74,7 @@ updatesave: async  (req,res) => {
 },
 allproducts : async  (req,res) => {
   const product = await products.findAll()
- 
+ let prodw = 0;
 product.forEach(producto => {
  
   prodw = producto.weight + prodw
