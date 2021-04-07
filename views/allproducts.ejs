@@ -24,71 +24,50 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="breadcroumb-title text-center">
-						<h1>Administrar Usuarios</h1>
-						<h6><a href="index.html">Home</a> / Administar</h6>
+						<h1>Todos Los Productos</h1>
+						<h6><a href="index.html">Home</a> / Todos los productos</h6>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="conteiner">
-      <div class="row"> 
-		<div class="d-flex justify-content-start col-6">
-			<form method="POST" id="busqueda" action="/searchUser" class="form-inline ocultar">
-				
-			   <input class="form-control" type="search" name="search" placeholder="Buscar...">
-				 <button class="btn" type="submit">
-				 <ion-icon name="search-outline"></ion-icon>
-			  </button>
-			</form> 
-		</div>
-			<div class="d-flex justify-content-end col-6">
-				<a href="/allproducts" class=" btn btn-primary ">Ver todos los productos</a>
+    <div class="d-flex justify-content-end">
+        <a href="#" class=" btn btn-primary border">El peso total de los productos es de: <%= prodw %></a>
+    </div>
+   
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th scope="col">Nombre del producto</th>
+                <th scope="col">Tipo de envío</th>
+                <th scope="col">Estado del envío</th>
+                <th scope="col">Peso</th>
+                <th scope="col">N° Tracking</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Comentario</th>
+                <th scope="col">Editar</th>
+                                   
+            </tr>
+        </thead>
+        <tbody>
+            <% product.forEach(product=> { %>
+                <tr>
+                    <td><%= product.name_product %></td>
+                    <td><%= product.tipo_envio %></td>
+                    <td><%= product.place %></td>
+                    <td><%= product.weight %></td>
+                    <td><%= product.n_tracking %></td>
+                     <td><%= product.date_state %></td>
+                     <td><%= product.coments %></td>
+                    <td><a href="/products/edit/<%= product.id%>"><ion-icon style="color: black;" name="pencil-outline"></ion-icon></ion-icon></a></td>
+                   
+                </tr>
+                <% }); %> 
+        </tbody>
+    </table>
 	
-			  </div>
-			   
-
-      </div> 
-	</div>
-	
-	<article class="col-12">
-		<table class="table">
-			<thead>
-				<tr>
-					
-					<th scope="col">Nombre</th>
-					<th scope="col">Apellido</th>
-					<th scope="col">Teléfono</th>
-					<th scope="col">Email</th>
-					<th scope="col">Dirección</th>
-					<th scope="col">DNI</th>
-					<th scope="col">Género</th>
-					<th scope="col">Ver</th>
-									   
-				</tr>
-			</thead>
-			<tbody>
-				<% usuarios.forEach(user=> { %>
-					<tr>
-					   
-						<td><%= user.first_name %></td>
-						<td><%= user.last_name %></td>
-						<td><%= user.telephone %></td>
-						<td><%= user.email %></td>
-						<td><%= user.adress %></td>
-						<td><%= user.dni %></td>
-						<td><%= user.gender %></td>
-						<td><a href="/adminProducts/<%= user.id %>"><ion-icon name="eye-outline"></ion-icon></ion-icon></a></td>
-					   
-					</tr>
-					<% }); %> 
-			</tbody>
-		</table>
-		<a href="/" class=" btn btn-primary border mb-3">Volver</a>
-		
-	</article>
-	
-
+	<a href="/adminuser" class=" btn btn-primary border mb-3 ml-3">Volver</a>
 
 	<!-- Scroll Top Area -->
 	<a href="#top" class="go-top" style="display: block;"><i class="las la-angle-up"></i></a>

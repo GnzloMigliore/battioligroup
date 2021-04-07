@@ -72,4 +72,15 @@ updatesave: async  (req,res) => {
   //return res.send(usuario)
   res.redirect(`/adminproducts/${product.user_id}`)
 },
+allproducts : async  (req,res) => {
+  const product = await products.findAll()
+ 
+product.forEach(producto => {
+  prodw = producto.weight * product.length
+  return prodw
+});
+
+res.render(path.resolve(__dirname, '..','views', 'allproducts'),{product,prodw});
+},
+
 }

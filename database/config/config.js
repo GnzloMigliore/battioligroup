@@ -10,13 +10,13 @@ module.exports = {
     "test": {
       "username": "db_battiolli",
       "password": "Gallo2573",
-      "database": "database_test",
+      "database": "battioli_",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": null,
+      "username": "db_battiolli",
+      "password": "Gallo2573",
       "database": "database_production",
       "host": "127.0.0.1",
       "dialect": "mysql"
