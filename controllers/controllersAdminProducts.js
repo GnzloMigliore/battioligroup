@@ -23,8 +23,9 @@ let nombre = product.name_product;
     place: req.body.place,
     n_tracking: req.body.n_tracking,
     weight: req.body.weight,
-    date_state:req.body.date_state
-
+    date_state:req.body.date_state,
+    user: user.first_name + " "+ user.last_name,
+    entrega:req.body.entrega
   }; 
 
   let newproduct = {
@@ -35,7 +36,9 @@ let nombre = product.name_product;
     n_tracking: req.body.n_tracking,
     coments: req.body.coments,
     weight: req.body.weight,
-    date_state:req.body.date_state
+    date_state:req.body.date_state,
+    user: user.first_name + " "+ user.last_name,
+    entrega:req.body.entrega
    
   }
   
@@ -65,7 +68,9 @@ updatesave: async  (req,res) => {
     n_tracking: req.body.n_tracking,
     weight: req.body.weight,
     coments: req.body.coments,
-    date_state:req.body.date_state
+    date_state:req.body.date_state,
+    user: usuario.first_name + " "+ usuario.last_name,
+    entrega:req.body.entrega
 
   }; 
   await product.update(product_body, {where: {id: req.params.id}})

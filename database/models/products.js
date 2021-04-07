@@ -15,7 +15,8 @@ module.exports = (sequelize, dataTypes) => {
         weight: dataTypes.INTEGER,
         coments: dataTypes.STRING,
         date_state: dataTypes.TEXT,
-      
+        user: dataTypes.STRING,
+        entrega: dataTypes.STRING,
     };
 
     const products = sequelize.define(alias, cols)

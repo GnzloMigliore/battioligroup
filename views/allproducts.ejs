@@ -46,6 +46,7 @@
                 <th scope="col">N° Tracking</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Comentario</th>
+                <th scope="col">Entregado</th>
                 <th scope="col">Editar</th>
                                    
             </tr>
@@ -60,6 +61,13 @@
                     <td><%= product.n_tracking %></td>
                      <td><%= product.date_state %></td>
                      <td><%= product.coments %></td>
+                     	
+								<% if (product.entrega =="NO entregado") {%>
+									<td><ion-icon name="close-outline"></ion-icon></td>
+									
+								<%} else {%>
+									<td><ion-icon name="checkmark-circle-outline"></ion-icon> </td>
+									<% } %>
                     <td><a href="/products/edit/<%= product.id%>"><ion-icon style="color: black;" name="pencil-outline"></ion-icon></ion-icon></a></td>
                    
                 </tr>

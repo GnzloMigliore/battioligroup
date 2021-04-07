@@ -157,7 +157,11 @@
 							</tr>
 						</thead>
 						<tr>
-						
+							<td>  <select name="entrega" id="tipo_envio" class="mb-3">
+								<option value="<%= product.entrega%>" selected disabled><%= product.entrega%></option>
+									<option value="NO entregado">NO entregado</option>
+									<option value="entergado">Entregado</option>
+								</select></td>
                             <td><textarea name="coments" type="text" class="form-control" id="coments"placeholder="Comentario"><%= product.coments%></textarea></td>
 							
 						   
