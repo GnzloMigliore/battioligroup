@@ -76,7 +76,7 @@ allproducts : async  (req,res) => {
   const product = await products.findAll()
  
 product.forEach(producto => {
-  prodw = producto.weight * product.length
+  prodw = producto.weight + producto.weight
   return prodw
 });
 
