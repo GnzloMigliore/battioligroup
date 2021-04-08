@@ -16,7 +16,7 @@ save : async  (req,res) => {
  
   const user = await users.findByPk(req.params.id, {include: ['products']})
   const product = await products.findOne({where:{user_id:req.params.id}})
-let nombre = product.name_product;
+
   let product_body={
     name_product: req.body.name_product,
     tipo_envio: req.body.tipo_envio,
@@ -41,7 +41,8 @@ let nombre = product.name_product;
     entrega:req.body.entrega
    
   }
-  
+  let  nombre = await product.name_product;
+
   if (nombre == null) {
    
     await products.update(product_body, {where: {user_id: req.params.id}})
@@ -77,8 +78,25 @@ updatesave: async  (req,res) => {
   //return res.send(usuario)
   res.redirect(`/adminproducts/${product.user_id}`)
 },
+delete : async  (req,res) => {
+  
+  const product = await products.findByPk(req.params.id)
+  const usuario= await users.findOne({where:{id:product.user_id}})
+  const productos = await products.findAll({where:{user_id:product.user_id}})
+  if (productos.length==1) {
+    await product.destroy({where: {id: req.params.id}})
+    let usuario_body = {user_id:usuario.id};
+
+    await products.create(usuario_body);
+  } else {
+    await products.destroy({where: {id: req.params.id}})
+  }
+
+  res.redirect(`/adminproducts/${product.user_id}`);
+},
 allproducts : async  (req,res) => {
-  const product = await products.findAll()
+  const product = await products.findAll({where:{name_product: {
+    [Op.ne]: '%null%' }}})
  let prodw = 0;
 product.forEach(producto => {
  
@@ -89,7 +107,8 @@ product.forEach(producto => {
 res.render(path.resolve(__dirname, '..','views', 'allproducts'),{product,prodw});
 },
 allproductsx : async  (req,res) => {
-  const product = await products.findAll( {where: {entrega:"NO entregado"}})
+  const product = await products.findAll( {where: {entrega:"NO entregado"}},{name_product: {
+    [Op.ne]: '%null%' }})
  let prodw = 0;
 product.forEach(producto => {
  
@@ -100,7 +119,8 @@ product.forEach(producto => {
 res.render(path.resolve(__dirname, '..','views', 'allproducts'),{product,prodw});
 },
 allproductstic : async  (req,res) => {
-  const product = await products.findAll( {where: {entrega:"entregado"}})
+  const product = await products.findAll( {where: {entrega:"entregado"}},{name_product: {
+    [Op.ne]: '%null%' }})
  let prodw = 0;
 product.forEach(producto => {
  

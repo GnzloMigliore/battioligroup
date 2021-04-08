@@ -15,4 +15,5 @@ router.get('/allproductstic', adminOnly, controllersAdminProducts.allproductstic
 router.post('/product/create/:id', controllersAdminProducts.save);
 router.get('/products/edit/:id', adminOnly, controllersAdminProducts.update);
 router.post('/update/:id', adminOnly, controllersAdminProducts.updatesave);
+router.get('/products/delete/:id', adminOnly, controllersAdminProducts.delete);
 module.exports = router;
