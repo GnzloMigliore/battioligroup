@@ -1,22 +1,22 @@
 module.exports = {
     "development": {
-      "username": "db_battiolli",
-      "password": "Gallo2573",
-      "database": "battioli_",
+      "username": "root",
+      "password": null,
+      "database": "battioligroup",
       "host": "127.0.0.1",
       "dialect": "mysql",
       "port": 3306
     },
     "test": {
-      "username": "db_battiolli",
-      "password": "Gallo2573",
-      "database": "battioli_",
+      "username": "root",
+      "password": null,
+      "database": "database_test",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
     "production": {
-      "username": "db_battiolli",
-      "password": "Gallo2573",
+      "username": "root",
+      "password": null,
       "database": "database_production",
       "host": "127.0.0.1",
       "dialect": "mysql"
