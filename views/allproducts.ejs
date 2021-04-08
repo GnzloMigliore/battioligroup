@@ -31,15 +31,36 @@
 			</div>
 		</div>
 	</div>
-    <div class="d-flex justify-content-end">
-        <a href="#" class=" btn btn-primary border mb-3">Peso total: <%= prodw %></a>
+    <div class="conteiner">
+        <div class="row">
+            <div class="navigation-btn col-6">
+                    
+                <button class="btn btn-primary dropdown-toggle d-none d-md-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ver productos
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <a class="dropdown-item"href="/allproducts">Ver todos</a> 
+            <a class="dropdown-item"href="/allproductsx">No entregados</a> 
+            <a class="dropdown-item"href="/allproductstic">Entregados</a> 
+           </ul>                     
+            </div>
+            <div class="d-flex justify-content-end col-6">
+                <button class="btn btn-light" type="button">
+                    Peso total: <%= prodw %>
+                </button>
+               
+            </div>
+        </div>
     </div>
+    
+   
    
     <table class="table">
         <thead>
             <tr>
                 
                 <th scope="col">Nombre del producto</th>
+                <th scope="col">Cliente</th>
                 <th scope="col">Tipo de envío</th>
                 <th scope="col">Estado del envío</th>
                 <th scope="col">Peso</th>
@@ -55,6 +76,7 @@
             <% product.forEach(product=> { %>
                 <tr>
                     <td><%= product.name_product %></td>
+                    <td><%= product.user %></td>
                     <td><%= product.tipo_envio %></td>
                     <td><%= product.place %></td>
                     <td><%= product.weight %></td>

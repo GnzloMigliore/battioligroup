@@ -88,5 +88,26 @@ product.forEach(producto => {
 
 res.render(path.resolve(__dirname, '..','views', 'allproducts'),{product,prodw});
 },
+allproductsx : async  (req,res) => {
+  const product = await products.findAll( {where: {entrega:"NO entregado"}})
+ let prodw = 0;
+product.forEach(producto => {
+ 
+  prodw = producto.weight + prodw
+  return prodw
+});
 
+res.render(path.resolve(__dirname, '..','views', 'allproducts'),{product,prodw});
+},
+allproductstic : async  (req,res) => {
+  const product = await products.findAll( {where: {entrega:"entregado"}})
+ let prodw = 0;
+product.forEach(producto => {
+ 
+  prodw = producto.weight + prodw
+  return prodw
+});
+
+res.render(path.resolve(__dirname, '..','views', 'allproducts'),{product,prodw});
+},
 }

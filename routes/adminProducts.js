@@ -10,6 +10,8 @@ const controllersAdminProducts = require(path.resolve(__dirname, '..', 'controll
 
 router.get('/adminProducts/:id', adminOnly, controllersAdminProducts.show);
 router.get('/allproducts', adminOnly, controllersAdminProducts.allproducts);
+router.get('/allproductsx', adminOnly, controllersAdminProducts.allproductsx);
+router.get('/allproductstic', adminOnly, controllersAdminProducts.allproductstic);
 router.post('/product/create/:id', controllersAdminProducts.save);
 router.get('/products/edit/:id', adminOnly, controllersAdminProducts.update);
 router.post('/update/:id', adminOnly, controllersAdminProducts.updatesave);
