@@ -95,4 +95,55 @@ module.exports = {
    
         res.render(path.resolve(__dirname, '..','views', 'forgetpassword'),{usuarios});
       },
+      recoverpassword : async  (req,res) => {
+        const usuarios = await users.findOne({
+          where: {
+              id: req.params.id
+             }
+      })
+   
+        res.render(path.resolve(__dirname, '..','views', 'recoverpassword'),{usuarios});
+      },
+      mensajerecover : async  (req,res) => {
+
+   
+        res.render(path.resolve(__dirname, '..','views', 'mensajerecover'));
+      },
+      notfound : async  (req,res) => {
+
+   
+        res.render(path.resolve(__dirname, '..','views', 'notfound'));
+      },
+      session: async  (req,res) => {
+        const usuarios = await users.findOne({
+          where: {
+              id: req.params.id
+             }
+      })
+        let errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.render(path.resolve(__dirname , '..','views','recoverpassword'), {
+              usuarios, errors: errors.errors,  old: req.body
+            });
+          }
+       
+        const usuario_body = { 
+          //return res.send(_body);
+         
+          
+          password: bcrypt.hashSync(req.body.contraseña, 10),
+          
+      }
+      users.update(usuario_body, {where: {id: req.params.id}})
+      .then((usuario) => {
+          return res.redirect('/');
+      })  
+      .catch(error => res.render(path.resolve(__dirname , '..','views','recoverpassword'), {usuarios,
+        errors: errors.errors,  old: req.body}))     
+      
+      
+      
+        
+   ;
+      },
 }
