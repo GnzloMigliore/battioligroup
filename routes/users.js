@@ -56,7 +56,7 @@ await transporter.sendMail({
 from: "no-reply@battioligroup.com",
 to: email,
 subject: "Recuperá tu contraseña",
-text: "Ingresa al siguiente link para restablecer tu contraseña:  http://battioligroup/recoverpassword/"+userId
+text: "Ingresa al siguiente link para restablecer tu contraseña:  http://battioligroup.com/recoverpassword/"+userId
 
 })
 res.redirect('/mensajerecover');
