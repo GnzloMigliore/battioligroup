@@ -64,6 +64,8 @@
 					<th scope="col">DNI</th>
 					<th scope="col">Género</th>
 					<th scope="col">Ver</th>
+					<th scope="col">Editar</th>
+					<th scope="col">Eliminar</th>
 									   
 				</tr>
 			</thead>
@@ -78,8 +80,9 @@
 						<td><%= user.adress %></td>
 						<td><%= user.dni %></td>
 						<td><%= user.gender %></td>
-						<td><a href="/adminProducts/<%= user.id %>"><ion-icon name="eye-outline"></ion-icon></ion-icon></a></td>
-					   
+						<td><a href="/adminProducts/<%= user.id %>"><ion-icon name="eye-outline"></ion-icon></a></td>
+						<td><a href="/editUser/<%= user.id %>"><ion-icon name="pencil-outline"></ion-icon></a></td>
+						<td><a href="/deleteUser/<%= user.id %>"><ion-icon name="close-outline"></ion-icon></a></td>
 					</tr>
 					<% }); %> 
 			</tbody>

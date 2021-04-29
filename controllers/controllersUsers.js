@@ -50,7 +50,7 @@ module.exports = {
 
    
     
-        const full_name = newuser.full_name;
+      const full_name = newuser.full_name;
       const email = req.body.email;
      
       contentHTML = `

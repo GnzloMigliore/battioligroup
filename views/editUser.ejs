@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<!-- head -->
+<%- include('partials/head.ejs') %>
+<!-- end head -->
+<!-- body start-->
+
+<body>
+	
+
+	<!-- top-nav bar start-->
+	<div id="nav-bar" class="nav-bar-main-block absolute">
+		<div class="sticky-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<div class="logo">
+							<a href="/" title="logo"><img src="/images/logobattioli.png" alt="logo"></a>
+						</div>
+						<!-- Responsive Menu Area -->
+						<div class="responsive-menu-wrap"></div>
+					</div>
+					<div class="col-lg-7">
+						<div class="navigation text-white theme-2">
+							<div id="cssmenu">
+								<ul>
+									<li class="active"><a href="/" title="Home">Home</a>
+									
+									</li>
+									<li><a href="/nosotros" title="Pages">Nosotros</a>
+										
+									</li>
+									<li><a href="/servicios" title="services">Servicios</a>
+										
+									</li>
+									
+									
+									<li><a href="/contacto" title="contact">Contacto</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-2">
+						<div class="navigation-btn">
+							<a href="/login" class="btn btn-primary" title="get quotes">INICIAR SESIÓN</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- top-nav bar end-->
+
+	<!-- Breadcroumb Area -->
+
+	<div class="breadcroumb-area bread-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="breadcroumb-title text-center">
+						<h1>Editar usuario</h1>
+						<h6><a href="/">Home</a> / Editar usuario</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact Area -->
+
+	<div class="contact-section section-padding mb-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12">
+				
+					<div class="row">
+						
+				<div class="col-lg-12">
+					<div class="contact-form">
+						<% if(typeof(errors) != 'undefined'){%>
+							<ul class="alert alert-danger">
+							  <% errors.forEach(error => { %>
+								<li><%= error.msg%></li>
+								<%});%>
+							</ul>
+						  <%}%>
+						<form name="contact-form" id="contactForm" action="/update/<%= usuario.id%>" method="POST" class="mb-5">
+                            <input type="text" name="nombre" id="Nombre" required="" placeholder="Nombre"value="<%= usuario.first_name%>">
+                            <input type="text" name="apellido" id="Apellido" required="" placeholder="Apellido"value="<%= usuario.last_name%>">
+							<input type="email" name="email" id="email" required="" placeholder="Email"value="<%= usuario.email%>">
+                            <input type="text" name="telephone" id="telephone" required="" placeholder="Teléfono"value="<%= usuario.telephone%>">
+							<input type="text" name="adress" id="asdress" required="" placeholder="Dirección"value="<%= usuario.adress%>">
+							<input type="text" name="dni" id="dni" required="" placeholder="DNI"value="<%= usuario.dni%>">
+							<select name="genero" id="gender">
+                                <% if(usuario.gender == "masculino"){%>
+                                <option value="femenino">Femenino</option>
+                                <option selected value="masculino">Masculino</option>
+                                <% } else { %>
+                                    <option selected  value="femenino">Femenino</option>
+                                <option value="masculino">Masculino</option>
+                                <% } %>
+                            </select>
+                          
+							<button type="submit" class="btn btn-primary mt-3">ACTUALIZAR</button>
+							
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+
+<!-- footer start-->
+<%- include('partials/footer.ejs') %>
+<!-- footer end-->
+
+	<!-- Scroll Top Area -->
+	<a href="#top" class="go-top" style="display: block;"><i class="las la-angle-up"></i></a>
+
+	<!-- Jquery Library -->
+	<script src="js/jquery-2.min.js"></script>
+	<!-- Bootstrap Js -->
+	<script src="js/bootstrap.bundle.js"></script>
+	<!-- Owl Carousel js -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Smooth Scroll Js -->
+	<script src="js/smooth-scroll.js"></script>
+	<!-- Navigation JS -->
+	<script src="js/menumaker.js"></script>
+	<!-- Way Points JS -->
+	<script src="js/waypoints.min.js"></script>
+	<!-- Counter Up JS -->
+	<script src="js/jquery.counterup.js"></script>
+	<!-- Sticky JS -->
+	<script src="js/jquery.sticky.js"></script>
+	<!-- Slicknav JS -->
+	<script src="js/jquery.slicknav.min.js"></script>
+	<!-- Mail Chimp JS -->
+	<script src="vendor/mailchimp/jquery.ajaxchimp.js"></script>
+	<!-- Main JS -->
+	<script src="js/theme.js"></script>
+	<!-- end JS -->
+
+</body>
+<!-- body end -->
+
+</html>
