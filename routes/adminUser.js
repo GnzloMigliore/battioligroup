@@ -10,7 +10,7 @@ const controllersAdminUser = require(path.resolve(__dirname, '..', 'controllers'
 
 router.get('/adminUser', adminOnly, controllersAdminUser.index);
 router.get('/editUser/:id', adminOnly, controllersAdminUser.edit);
-router.post('/update/:id', adminOnly,userEdit, controllersAdminUser.update);
+router.post('/updateUser/:id', adminOnly,userEdit, controllersAdminUser.update);
 router.post('/searchUser', adminOnly, controllersAdminUser.search);
 router.get('/deleteUser/:id', [adminOnly], controllersAdminUser.delete);
 

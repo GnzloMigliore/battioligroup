@@ -5,7 +5,7 @@ module.exports = {
       "database": "battioli_",
       "host": "127.0.0.1",
       "dialect": "mysql",
-      "port": 3306
+      "port": 3306 
     },
     "test": {
       "username": "db_battiolli",

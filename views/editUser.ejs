@@ -86,7 +86,7 @@
 								<%});%>
 							</ul>
 						  <%}%>
-						<form name="contact-form" id="contactForm" action="/update/<%= usuario.id%>" method="POST" class="mb-5">
+						<form name="contact-form" id="contactForm" action="/updateUser/<%= usuario.id%>" method="POST" class="mb-5">
                             <input type="text" name="nombre" id="Nombre" required="" placeholder="Nombre"value="<%= usuario.first_name%>">
                             <input type="text" name="apellido" id="Apellido" required="" placeholder="Apellido"value="<%= usuario.last_name%>">
 							<input type="email" name="email" id="email" required="" placeholder="Email"value="<%= usuario.email%>">
